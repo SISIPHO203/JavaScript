@@ -1,4 +1,4 @@
-# JavaScript
+ # JavaScript
 
 
 Variable- it is a container that hold data values.
@@ -126,7 +126,7 @@ Once elements are selected they can be modified in various ways, such as changin
 Common modifications
 
 Changing content: use the textContent or innerHTML properties to update the text or HTML inside an element.
-Changing styles: use the style proprty to modify the CSS style of an element(e. element.style.color="blue";).
+Changing styles: use the style proprty to modify the CSS style of an element( element.style.color="blue";).
 Adding/removing classes: use classlist.add, classlist.remove or classlist.toggle to manipulate an element's classes.
 Changig Attributes: use setAttribute and removeAttribute to modify or rmove attributes like src,href,alt etc.
 
