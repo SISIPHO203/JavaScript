@@ -132,9 +132,54 @@ Changig Attributes: use setAttribute and removeAttribute to modify or rmove attr
 
 Creating and inserting elements:
 
+##restAPI
+
+http: To create an HTTP server.
+fs: To read and write files (our "database").
+path: To handle file paths easily.
+
+Constants: We define the port (3000) and the path to our JSON file (items.json).
+
+Create Server: We create the server using http.createServer() and set the response header to return JSON.
 
 
+GET
 
+
+We check the incoming request's method and URL to determine which action to take (GET, POST, PUT, DELETE).
+
+
+We read the items.json file.
+If there's an error (like the file not being found), we respond with a 500 Internal Server Error.
+If successful, we respond with a 200 OK status and send the data.
+If none of the conditions match, we return a 404 Not Found response.
+
+POST
+
+We collect the incoming data chunks until the request ends.
+We parse the body into a new item and read the current items from items.json.
+We add the new item to the list and write it back to the file.
+Finally, we respond with a 201 Created status and the new item.
+
+PUT
+
+We extract the item ID from the URL.
+Similar to the POST request, we read the current items, find the item to update, and replace it with the new data.
+If the item is not found, we return a 404 Not Found status.
+Otherwise, we write the updated items back and respond with a 200 OK status.
+
+DELETE
+
+We find the ID from the URL and read the items.
+We check for the item index and remove it using splice().
+If the item isn't found, we respond with 404.
+If successful, we write back the updated list and respond with a 204 No Content status.
+
+
+ 
+SERVER LISTENING
+
+Finally, we have the server listen on the specified port and log a message when it's up and running.
 
 
 
